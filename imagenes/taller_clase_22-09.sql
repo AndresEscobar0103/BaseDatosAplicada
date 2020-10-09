@@ -1,34 +1,52 @@
-create database if not exists Medio_Ambiente;
-use Medio_Ambiente;
-create table cont_ambiente(
-	id int	primary	key auto_increment,
-    pais varchar(40),
-    ciudad decimal(2),
-	pueblos varchar(15)
+create database if not exists medio_ambiente1;
+
+use medio_ambiente1;
+
+create table contaminacion1(
+     id_conta int primary key auto_increment not null,
+     porcentaje decimal(3)
 );
 
-create table cont_vehicular(
-	id int	primary	key auto_increment,
-    autos varchar(32),
-    motos varchar(30),
-    bus varchar (35)
+alter table contaminacion
+add consecuencias varchar(50) not null;
+
+alter table contaminacion
+add causas varchar(50) not null;
+
+alter table contaminacion
+add solucion varchar(200);
+
+
+
+create table contaminacion_termica(
+     id int primary key auto_increment not null,
+     porcentaje decimal(3)
 );
 
-CREATE TABLE cont_fabricas (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    Nestle VARCHAR(32),
-    F_chocolate VARCHAR(30),
-	cocacola VARCHAR(35)
+alter table contaminacion_termica
+add consecuencias varchar(50) not null;
+
+alter table contaminacion_termica
+add causas varchar(50) not null;
+
+alter table contaminacion_termica
+add solucion varchar(200);
+
+
+create table contaminacion_atmosferica(
+     id_atm int primary key auto_increment not null,
+     porcentaje decimal(3)
 );
 
-CREATE TABLE tabletest (
-    id int primary key auto_increment not null,
-    Nestle varchar(32),
-    F_chocolate varchar(30),
-	cocacola varchar(35)
-);
+alter table contaminacion_atmosferica
+add consecuencias varchar(50) not null;
 
-rename table tabletest to tablerenamed;
-truncate table tablerenamed;
-drop table tablerenamed;
+alter table contaminacion_atmosferica
+add causas varchar(50) not null;
 
+alter table contaminacion_atmosferica
+add solucion varchar(200);
+
+rename table contaminacion1 to contaminacion2;
+truncate table contaminacion1;
+drop table contaminacion1;
