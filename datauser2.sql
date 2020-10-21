@@ -43,9 +43,34 @@ select concat(username,"  ",lastname) as nameandlastname
 from alternative
 where nationality="col";
 
-create table datauser1(
+create table datauser2(
 id int auto_increment,
 birthate date not null,
 weight decimal (2,2),
+nameuser varchar(60),
 primary key(id)
 );
+alter table datauser2
+modify weight decimal(7,2);
+
+insert into datauser2
+value(0,"2000-05-16",70.1,"Jose Vega");
+
+insert into datauser2
+value(0,"1999-11-30 ",60.2,"Andres Escobar");
+
+insert into datauser2
+value(0,"2001-04-08 ",65.5,"Sebastian Vargas");
+
+insert into datauser2
+value(0,"1998-02-11",75.3,"Fernanda Galindo");
+
+select * from datauser2;
+select date_format(birthate,"%d/%b/%y") as date1
+from datauser2
+
+select round(weight,2) as peso
+from datauser2;
+
+select left(nameuser,4) as newname
+from datauser2;
