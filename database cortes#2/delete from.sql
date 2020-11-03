@@ -6,7 +6,7 @@ create table contaminacion4(
 	 id_conta3 int primary key auto_increment not null,
      porcentaje decimal(3) not null,
 	 consecuencias varchar(50),
-     contribuccion boolean
+     status boolean
 );
 
 create table contaminacion_atmosferica(
@@ -38,7 +38,7 @@ insert into contaminacion_atmosferica
 	values(0,"36","gases para refrigeración",true,3);
 
 update contaminacion_atmosferica
-set contribuccion=false
+set status=false
 where id_atm=1;
 
 delete from contaminacion_atmosferica 
