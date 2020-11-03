@@ -13,7 +13,7 @@ create table contaminacion_atmosferica(
 	 id_atm int primary key auto_increment not null,
      porcentaje decimal(3) not null,
 	 consecuencias varchar(50),
-     contribuccion boolean,
+     status boolean,
 	 idconta int,
 	 constraint fk_conta foreign key(idconta)
      references contaminacion4(id_conta3)
